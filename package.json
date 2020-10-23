@@ -1,8 +1,8 @@
 {
-  "name": "sql-formatter-cli",
+  "name": "sql-formatter-dsi",
   "version": "2.3.3",
   "description": "Formats whitespaces in a SQL query to make it more readable. Binary version",
-  "bin": "dist/sql-formatter-cli",
+  "bin": "dist/sql-formatter-dsi",
   "scripts": {
     "build": "rollup -c --environment BUILD:production",
     "prepublish": "yarn run build",
@@ -39,7 +39,7 @@
     "babel-register": "^6.18.0",
     "babelrc-rollup": "^3.0.0",
     "optimist": "^0.6.1",
-    "rollup": "^0.43.0",
+    "rollup": "^0.43.1",
     "rollup-plugin-babel": "^2.7.1",
     "rollup-plugin-clean": "^1.0.0",
     "rollup-plugin-commonjs": "^8.2.1",
