@@ -41,7 +41,7 @@ let writeoverFile = argv.w;
 if (writeoverFile != '-') {
   const formatted = sqlFormatter.format(fs.readFileSync(writeoverFile, 'utf8'), options);
   fs.writeFileSync(writeoverFile, formatted, 'utf8');
-  process.exit(i);
+  process.exit();
 }
 
 let inFile = argv.i;

@@ -1,6 +1,6 @@
 {
   "name": "sql-formatter-dsi",
-  "version": "1.0.0",
+  "version": "1.0.3",
   "description": "Formats whitespaces in a SQL query to make it more readable. Binary version",
   "bin": "dist/sql-formatter-dsi",
   "scripts": {
