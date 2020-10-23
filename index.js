@@ -6,7 +6,9 @@ let command = optimist
       .usage('SQL formatter')
       .default('i', '-')
       .default('o', '-')
+      .default('w', '-')
       .default('s', 'sql')
+      .alias('w', 'overwrite')
       .alias('i', 'file')
       .alias('o', 'out')
       .alias('s', 'sql')
@@ -14,7 +16,8 @@ let command = optimist
 
       .describe('i', 'Load a file. "-" - stdin')
       .describe('s', 'Sql dialect: "sql" Standard SQL, "n1ql" Couchbase N1QL, "db2" IBM DB2, "pl/sql" Oracle PL/SQL')
-      .describe('o', 'Output file name. "-" - stdout');
+      .describe('o', 'Output file name. "-" - stdout')
+      .describe('w', 'Overwrite to the same file');
 let argv = command.argv;
 
 if (argv.h) {
@@ -32,6 +35,14 @@ if (!~supportedDialects.indexOf(dialect)) {
 let options = {
   language: dialect
 };
+
+let writeoverFile = argv.w;
+
+if (writeoverFile != '-') {
+  const formatted = sqlFormatter.format(fs.readFileSync(writeoverFile, 'utf8'), options);
+  fs.writeFileSync(writeoverFile, formatted, 'utf8');
+  process.exit(i);
+}
 
 let inFile = argv.i;
 let outFile = argv.o;

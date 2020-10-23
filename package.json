@@ -9,7 +9,7 @@
     "postbuild": "./postbuild.sh",
     "watch": "rollup -c -w"
   },
-  "repository": "osv/sql-formatter-cli",
+  "repository": "ammarshadiq/sql-formatter-cli",
   "keywords": [
     "cli",
     "sql",
@@ -21,16 +21,17 @@
   "authors": [
     "Rene Saarsoo",
     "Uku Pattak",
-    "Olexandr Sydorchuk"
+    "Olexandr Sydorchuk",
+    "Ammar Shadiq Darman"
   ],
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/osv/sql-formatter-cli/issues"
+    "url": "https://github.com/ammarshadiq/sql-formatter-dsi/issues"
   },
   "files": [
     "dist"
   ],
-  "homepage": "https://github.com/osv/sql-formatter-cli#readme",
+  "homepage": "https://github.com/ammarshadiq/sql-formatter-dsi#readme",
   "dependencies": {},
   "devDependencies": {
     "babel-plugin-external-helpers": "^6.18.0",
