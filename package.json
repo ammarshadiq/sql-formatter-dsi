@@ -9,7 +9,7 @@
     "postbuild": "./postbuild.sh",
     "watch": "rollup -c -w"
   },
-  "repository": "ammarshadiq/sql-formatter-cli",
+  "repository": "ammarshadiq/sql-formatter-dsi",
   "keywords": [
     "cli",
     "sql",
