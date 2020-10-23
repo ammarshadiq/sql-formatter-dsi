@@ -4,15 +4,16 @@
 
 ## SYNOPSIS
 
-    $ sql-formatter-cli -h
+    $ sql-formatter-dsi -h
     SQL formatter
 
     Options:
+      -w, --overwrite  Load a file and overwrite it. "-" - stdin   
       -i, --file  Load a file. "-" - stdin                                                                       [default: "-"]
       -s, --sql   Sql dialect: "sql" Standard SQL, "n1ql" Couchbase N1QL, "db2" IBM DB2, "pl/sql" Oracle PL/SQL  [default: "sql"]
       -o, --out   Output file name. "-" - stdout                                                                 [default: "-"]
 
-    $ echo "SELECT * FROM databases WHERE category='NoSQL'" | sql-formatter-cli
+    $ echo "SELECT * FROM databases WHERE category='NoSQL'" | sql-formatter-dsi
     SELECT
       *
     FROM
@@ -24,7 +25,7 @@
 
 This tool require Node.js to be installed. After you can install using npm:
 
-    npm i -g sql-formatter-cli
+    npm i -g sql-formatter-dsi
 
 ## THANKS
 
@@ -40,10 +41,10 @@ The reason why I don't create PR for adding cli for sql-formatter lib is that sq
   (defun sql-beautify-region (beg end)
     "Beautify SQL in region between beg and END.
 Dependency:
-npm i -g sql-formatter-cli"
+npm i -g sql-formatter-dsi"
     (interactive "r")
     (save-excursion
-      (shell-command-on-region beg end "sql-formatter-cli" nil t)))
+      (shell-command-on-region beg end "sql-formatter-dsi" nil t)))
   (defun sql-beautify-buffer ()
     "Beautify SQL in buffer."
     (interactive)

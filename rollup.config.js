@@ -4,8 +4,6 @@ import resolve from 'rollup-plugin-node-resolve';
 import commonjs from 'rollup-plugin-commonjs';
 import clean from 'rollup-plugin-clean';
 
-import uglify from 'rollup-plugin-uglify';
-
 let pkg = require('./package.json');
 let external = Object.keys(pkg.dependencies);
 
@@ -21,9 +19,6 @@ let plugins = [
   babel(babelrc())
 ];
 
-if (prod) {
-  plugins.push(uglify())
-}
 
 export default {
   entry: 'index.js',
